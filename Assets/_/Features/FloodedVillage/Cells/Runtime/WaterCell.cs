@@ -1,16 +1,22 @@
-using UnityEngine;
-
 public class WaterCell : Cell
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override bool LosingState()
     {
-        
+        return false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnCellClicked()
     {
-        
+
+    }
+
+    public override void OnFlooded()
+    {
+
+    }
+
+    public override bool WinningState()
+    {
+        return true;
     }
 }

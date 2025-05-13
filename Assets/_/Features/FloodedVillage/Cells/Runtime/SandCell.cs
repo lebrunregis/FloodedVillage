@@ -1,16 +1,41 @@
 using UnityEngine;
 
-public class SandCell : ClickableCell
+public class SandCell : Cell
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Sprite m_sandSprite;
+    public override bool LosingState()
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnCellClicked()
     {
-        
+        NearbyWaterCheck();
+    }
+
+    public override void OnFlooded()
+    {
+        Flood();
+    }
+
+    public override bool WinningState()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void NearbyWaterCheck()
+    {
+        foreach (var cell in m_nearbyCells)
+        {
+            switch (cell.WaterState)
+            {
+                case EnumWaterState.Wet:
+                    OnFlooded();
+                    break;
+                case EnumWaterState.Dry:
+                    break;
+
+            }
+        }
     }
 }

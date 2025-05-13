@@ -1,16 +1,43 @@
 using UnityEngine;
 
-public class ZombieCell : MonoBehaviour
+public class ZombieCell : Cell
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Sprite m_zombie;
+    public Sprite m_drownedZombie;
+    public override bool LosingState()
     {
-        
+        switch (m_waterState)
+        {
+            case EnumWaterState.Dry:
+                return false;
+            case EnumWaterState.Wet:
+                return true;
+            default:
+                return false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnCellClicked()
     {
-        
+
+    }
+
+    public override void OnFlooded()
+    {
+        m_waterState = EnumWaterState.Wet;
+        Flood();
+    }
+
+    public override bool WinningState()
+    {
+        switch (m_waterState)
+        {
+            case EnumWaterState.Dry:
+                return false;
+            case EnumWaterState.Wet:
+                return true;
+            default:
+                return false;
+        }
     }
 }

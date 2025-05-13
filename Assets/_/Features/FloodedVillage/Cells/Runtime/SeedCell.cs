@@ -1,35 +1,31 @@
 using UnityEngine;
 
-public class VillagerCell : Cell
+public class SeedCell : Cell
 {
-    public static Sprite m_villager;
-    public static Sprite m_deadVillager;
-    public VillagerCell()
+    public static Sprite seeds;
+    public static Sprite tree;
+    public SeedCell()
     {
-
+        m_cellObject = EnumCellObject.Tree;
+        m_cellType = EnumCellType.Dirt;
+        m_waterState = EnumWaterState.Dry;
+        m_fgLayer.sprite = seeds;
     }
 
     public override bool LosingState()
     {
-        switch (m_waterState)
-        {
-            case EnumWaterState.Dry:
-                return false;
-            case EnumWaterState.Wet:
-                return true;
-            default:
-                return false;
-        }
+        return false;
     }
 
     public override void OnCellClicked()
     {
+
     }
 
     public override void OnFlooded()
     {
         m_waterState = EnumWaterState.Wet;
-        Flood();
+        m_fgLayer.sprite = tree;
     }
 
     public override bool WinningState()
@@ -37,9 +33,9 @@ public class VillagerCell : Cell
         switch (m_waterState)
         {
             case EnumWaterState.Dry:
-                return true;
-            case EnumWaterState.Wet:
                 return false;
+            case EnumWaterState.Wet:
+                return true;
             default:
                 return false;
         }

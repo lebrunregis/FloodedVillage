@@ -1,0 +1,16 @@
+{
+    "name": "FloodedVillage.Cells.Runtime",
+    "rootNamespace": "FloodedVillage.Cells.Runtime",
+    "references": [
+        "GUID:e539dba2f2442ac45872f12e12ad6676"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

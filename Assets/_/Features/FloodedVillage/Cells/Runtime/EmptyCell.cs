@@ -1,16 +1,22 @@
-using UnityEngine;
-
 public class EmptyCell : Cell
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override bool LosingState()
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnCellClicked()
     {
-        
+        throw new System.NotImplementedException();
+    }
+
+    public override void OnFlooded()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override bool WinningState()
+    {
+        throw new System.NotImplementedException();
     }
 }
