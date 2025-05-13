@@ -104,7 +104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7225193188487002490
 Transform:
   m_ObjectHideFlags: 0
@@ -165,8 +165,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: c25ab3c5c87be4bdd868baad47c52198, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -174,7 +174,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6537586292619318044
@@ -190,9 +190,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nearbyCells: []
+  m_waterSprite: {fileID: 21300000, guid: 1c5f373149a9b48a8af7a5fac9b62897, type: 3}
+  m_dirtSprite: {fileID: 21300000, guid: 8724e29841e654af38b5f0b15605c060, type: 3}
   m_bgLayer: {fileID: 356758705752266306}
   m_fgLayer: {fileID: 2583586483044856970}
   m_waterLayer: {fileID: 3478948299748051909}
+  seeds: {fileID: 21300000, guid: c25ab3c5c87be4bdd868baad47c52198, type: 3}
+  tree: {fileID: 21300000, guid: 833c0bbddec26460889818ad1f225322, type: 3}
 --- !u!1 &7733966938857442458
 GameObject:
   m_ObjectHideFlags: 0

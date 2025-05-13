@@ -4,6 +4,13 @@ public class ZombieCell : Cell
 {
     public Sprite m_zombie;
     public Sprite m_drownedZombie;
+
+    private void Awake()
+    {
+        m_bgLayer.sprite = m_dirtSprite;
+        m_fgLayer.sprite = m_zombie;
+    }
+
     public override bool LosingState()
     {
         switch (m_waterState)

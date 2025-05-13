@@ -2,51 +2,34 @@ using UnityEngine;
 
 public class FloodedMap : MonoBehaviour
 {
-    public Sprite none;
-    public Sprite bridge;
-    public Sprite crops;
-    public Sprite empty;
-    public Sprite seeds;
-    public Sprite stone;
-    public Sprite villager;
-    public Sprite villager_drowned;
-    public Sprite water;
-    public Sprite zombie;
-    public Sprite zombie_drowned;
-    public GameObject[] bg;
-    public GameObject[] fg;
+    public GameObject none;
+    public GameObject bridge;
+    public GameObject empty;
+    public GameObject seeds;
+    public GameObject sand;
+    public GameObject stone;
+    public GameObject villager;
+    public GameObject water;
+    public GameObject zombie;
+    public GameObject[] map;
     public int width;
     public int height;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        GenerateBG();
-        GenerateFG();
+        GenerateMap();
     }
 
-    private void GenerateBG()
+    private void GenerateMap()
     {
-        bg = new GameObject[width * height];
-        for (int i = 0; i < bg.Length; i++)
+       // map = new GameObject[width * height];
+        for (int i = 0; i < map.Length; i++)
         {
-            GameObject go = new GameObject();
-            SpriteRenderer sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = none;
+            GameObject go = Instantiate(map[i]);
             go.transform.position = new Vector3(i % width, i / width, 0);
-            bg[i] = go;
-        }
-    }
-
-    private void GenerateFG()
-    {
-        fg = new GameObject[width * height];
-        for (int i = 0; i < fg.Length; i++)
-        {
-            GameObject go = new GameObject();
-            SpriteRenderer sr = go.AddComponent<SpriteRenderer>();
-            go.transform.position = new Vector3(i % width, i / width, 0);
-            fg[i] = go;
+            map[i] = go;
+            go.SetActive(true);
         }
     }
 

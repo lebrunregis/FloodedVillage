@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class SeedCell : Cell
 {
-    public static Sprite seeds;
-    public static Sprite tree;
-    public SeedCell()
+    public Sprite seeds;
+    public Sprite tree;
+
+    private void Awake()
     {
         m_cellObject = EnumCellObject.Tree;
         m_cellType = EnumCellType.Dirt;

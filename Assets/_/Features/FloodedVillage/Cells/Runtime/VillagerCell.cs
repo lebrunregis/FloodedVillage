@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class VillagerCell : Cell
 {
-    public static Sprite m_villager;
-    public static Sprite m_deadVillager;
-    public VillagerCell()
-    {
+    public Sprite m_villager;
+    public Sprite m_deadVillager;
 
+    private void Awake()
+    {
+        m_bgLayer.sprite = m_dirtSprite;
+        m_fgLayer.sprite = m_villager;
     }
 
     public override bool LosingState()

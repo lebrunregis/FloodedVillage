@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class BridgeCell : Cell
 {
-    public Sprite m_bridgesprite;
+    public Sprite m_bridgeSprite;
+    private void Awake()
+    {
+        m_bgLayer.sprite = m_dirtSprite;
+        m_fgLayer.sprite = m_bridgeSprite;
+    }
     public override bool LosingState()
     {
         return false;

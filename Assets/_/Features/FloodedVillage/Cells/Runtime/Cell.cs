@@ -8,8 +8,8 @@ public abstract class Cell : VerboseBehaviour
     protected EnumWaterState m_waterState = EnumWaterState.Dry;
 
     public List<Cell> m_nearbyCells = new List<Cell>();
-    public static Sprite m_waterSprite;
-    public static Sprite m_dirtSprite;
+    public Sprite m_waterSprite;
+    public Sprite m_dirtSprite;
 
     public SpriteRenderer m_bgLayer;
     public SpriteRenderer m_fgLayer;
@@ -20,12 +20,11 @@ public abstract class Cell : VerboseBehaviour
     private void Awake()
     {
         m_bgLayer.sprite = m_dirtSprite;
+        m_waterLayer.sprite = m_waterSprite;
+        m_waterLayer.enabled = false;
     }
 
-    private void OnMouseDown()
-    {
-        OnCellClicked();
-    }
+
 
     protected void Flood()
     {
