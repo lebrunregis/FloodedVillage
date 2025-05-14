@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 631251734927819053}
   - component: {fileID: 6915767686240559522}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaterLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4742586654073132410}
   - component: {fileID: 7703432539027139300}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForegroundLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 3453690549116876005}
   - component: {fileID: 1019198596551520307}
   - component: {fileID: 9178443118789454198}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BridgeCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 5934205589643487382}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.950048, y: -4.3721566, z: 6.2199507}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4659198316257609452}
   - component: {fileID: 4028140119003754481}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaterLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,8 +98,8 @@ GameObject:
   - component: {fileID: 7630329598389728095}
   - component: {fileID: 2840322438715563926}
   - component: {fileID: 6744830931730502360}
-  - component: {fileID: 3320053695935482962}
-  m_Layer: 0
+  - component: {fileID: 7964228840175825009}
+  m_Layer: 3
   m_Name: SandCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ Transform:
   m_GameObject: {fileID: 3451135804104340771}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.950048, y: -4.3721566, z: 6.2199507}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -197,16 +197,13 @@ MonoBehaviour:
   m_fgLayer: {fileID: 6232962324709872173}
   m_waterLayer: {fileID: 4028140119003754481}
   m_sandSprite: {fileID: 21300000, guid: a98fe46bf56754726bb9bb7c6f3423ad, type: 3}
---- !u!61 &3320053695935482962
-BoxCollider2D:
+--- !u!65 &7964228840175825009
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3451135804104340771}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -215,34 +212,12 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.0001, y: 0.0001}
-  m_EdgeRadius: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6491902460858790111
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8211031154212202080}
   - component: {fileID: 6232962324709872173}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForegroundLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

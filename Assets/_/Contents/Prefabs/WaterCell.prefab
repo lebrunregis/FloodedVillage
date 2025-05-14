@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7136280614692325621}
   - component: {fileID: 9015075269070388160}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForegroundLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6091174944299337084}
   - component: {fileID: 4588918766386237478}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaterLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 3090651046773459141}
   - component: {fileID: 1287473141480794429}
   - component: {fileID: 4334977655537271125}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaterCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 6293835451787482242}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.950048, y: -4.3721566, z: 6.2199507}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

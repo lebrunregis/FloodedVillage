@@ -5,6 +5,7 @@ public class WaterCell : Cell
     {
         m_bgLayer.sprite = m_dirtSprite;
         m_waterLayer.sprite = m_waterSprite;
+        m_waterState = EnumWaterState.Wet;
     }
 
     public override bool LosingState()

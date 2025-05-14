@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 665297646514090725}
   - component: {fileID: 1461738201181357838}
   - component: {fileID: 7603125947616156171}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VillagerCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1659628044128796526}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.950048, y: -4.3721566, z: 6.2199507}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7033314162111518861}
   - component: {fileID: 8322966135789500533}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaterLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8886477099614138805}
   - component: {fileID: 5501966587082235005}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForegroundLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

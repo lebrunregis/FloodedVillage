@@ -24,8 +24,6 @@ public abstract class Cell : VerboseBehaviour
         m_waterLayer.enabled = false;
     }
 
-
-
     protected void Flood()
     {
         foreach (var cell in m_nearbyCells)

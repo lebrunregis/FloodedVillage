@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5307243085446854445}
   - component: {fileID: 3478948299748051909}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaterLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7225193188487002490}
   - component: {fileID: 356758705752266306}
   - component: {fileID: 6537586292619318044}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SeedCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ Transform:
   m_GameObject: {fileID: 5213686587274020174}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.950048, y: -4.3721566, z: 6.2199507}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6082025023433754987}
   - component: {fileID: 2583586483044856970}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForegroundLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

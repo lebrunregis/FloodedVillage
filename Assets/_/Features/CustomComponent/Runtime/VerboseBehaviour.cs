@@ -3,7 +3,7 @@ using UnityEngine;
 public class VerboseBehaviour : MonoBehaviour
 {
     #region Debug
-    private bool m_isVerbose;
+    public bool m_isVerbose = true;
 
     protected void Log(string msg)
     {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6096990460425355152}
   - component: {fileID: 2274841161987456831}
   - component: {fileID: 5113958152686317352}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StoneCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3948851223153751881}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.950048, y: -4.3721566, z: 6.2199507}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6168857228658749102}
   - component: {fileID: 647448254650275234}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaterLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4102937705409091011}
   - component: {fileID: 6009040798899883487}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForegroundLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
