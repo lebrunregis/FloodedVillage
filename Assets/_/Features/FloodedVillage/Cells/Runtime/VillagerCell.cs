@@ -7,8 +7,12 @@ public class VillagerCell : Cell
 
     private void Awake()
     {
-        m_bgLayer.sprite = m_dirtSprite;
-        m_fgLayer.sprite = m_villager;
+        m_cellObject = EnumCellObject.Villager;
+        m_cellType = EnumCellType.Empty;
+        m_waterState = EnumWaterState.Dry;
+        m_bgRenderer.sprite = m_dirtSprite;
+        m_fgRenderer.sprite = m_villager;
+        m_waterRenderer.sprite = m_waterSprite;
     }
 
     public override bool LosingState()
@@ -31,6 +35,8 @@ public class VillagerCell : Cell
     public override void OnFlooded()
     {
         m_waterState = EnumWaterState.Wet;
+        m_waterRenderer.enabled = true;
+        m_fgRenderer.sprite = m_deadVillager;
         Flood();
     }
 

@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class FloodedMap : MonoBehaviour
 {
@@ -46,23 +44,23 @@ public class FloodedMap : MonoBehaviour
         int l = i - 1;
         int r = i + 1;
 
-        Debug.Log(u+" " + d +" "+ l +" " + r);
+        Debug.Log(u + " " + d + " " + l + " " + r);
 
-        if (u>=0)
+        if (u >= 0)
         {
             neighbors.Add(u);
         }
-        if (d<width*height)
+        if (d < width * height)
         {
             neighbors.Add(d);
         }
 
-        if (l >= 0 && l/width == i/width)
+        if (l >= 0 && l / width == i / width)
         {
             neighbors.Add(l);
         }
 
-        if (r < width * height && r / width == i/width)
+        if (r < width * height && r / width == i / width)
         {
             neighbors.Add(r);
         }
@@ -73,7 +71,7 @@ public class FloodedMap : MonoBehaviour
 
     private void GenerateMap()
     {
-       // map = new GameObject[width * height];
+        // map = new GameObject[width * height];
         for (int i = 0; i < map.Length; i++)
         {
             GameObject go = Instantiate(map[i]);
@@ -81,11 +79,5 @@ public class FloodedMap : MonoBehaviour
             map[i] = go;
             go.SetActive(true);
         }
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-
     }
 }

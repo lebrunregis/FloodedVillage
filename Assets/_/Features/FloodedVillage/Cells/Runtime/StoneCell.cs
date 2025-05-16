@@ -6,8 +6,12 @@ public class StoneCell : Cell
 
     private void Awake()
     {
-        m_bgLayer.sprite = m_dirtSprite;
-        m_fgLayer.sprite = m_stoneSprite;
+        m_cellObject = EnumCellObject.None;
+        m_cellType = EnumCellType.Stone;
+        m_waterState = EnumWaterState.Dry;
+        m_bgRenderer.sprite = m_dirtSprite;
+        m_fgRenderer.sprite = m_stoneSprite;
+        m_waterRenderer.sprite = m_waterSprite;
     }
     public override bool LosingState()
     {

@@ -3,32 +3,38 @@ using UnityEngine;
 
 public abstract class Cell : VerboseBehaviour
 {
-    protected EnumCellObject m_cellObject = EnumCellObject.None;
-    protected EnumCellType m_cellType = EnumCellType.Empty;
-    protected EnumWaterState m_waterState = EnumWaterState.Dry;
+    public EnumCellObject m_cellObject = EnumCellObject.None;
+    public EnumCellType m_cellType = EnumCellType.Empty;
+    public EnumWaterState m_waterState = EnumWaterState.Dry;
 
     public List<Cell> m_nearbyCells = new List<Cell>();
     public Sprite m_waterSprite;
     public Sprite m_dirtSprite;
 
-    public SpriteRenderer m_bgLayer;
-    public SpriteRenderer m_fgLayer;
-    public SpriteRenderer m_waterLayer;
+    public SpriteRenderer m_bgRenderer;
+    public SpriteRenderer m_fgRenderer;
+    public SpriteRenderer m_waterRenderer;
 
     public EnumWaterState WaterState { get => m_waterState; }
 
     private void Awake()
     {
-        m_bgLayer.sprite = m_dirtSprite;
-        m_waterLayer.sprite = m_waterSprite;
-        m_waterLayer.enabled = false;
+        m_bgRenderer.sprite = m_dirtSprite;
+        m_waterRenderer.sprite = m_waterSprite;
+        m_waterRenderer.enabled = false;
     }
 
     protected void Flood()
     {
-        foreach (var cell in m_nearbyCells)
+        if (m_waterState == EnumWaterState.Wet)
         {
-            cell.OnFlooded();
+            for (int i = 0; i <= m_nearbyCells.Count; i++)
+            {
+                if (m_cellType == EnumCellType.Empty)
+                {
+                    m_nearbyCells[i].OnFlooded();
+                }
+            }
         }
     }
 

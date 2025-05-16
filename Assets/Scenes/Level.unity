@@ -817,6 +817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieCell
       objectReference: {fileID: 0}
+    - target: {fileID: 8800133237505861519, guid: a516572d9cf10474b9b853c77c54fccb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -833,6 +837,22 @@ PrefabInstance:
     - target: {fileID: 3948851223153751881, guid: c0d3c9d6f8525a643b683615b8aa77a7, type: 3}
       propertyPath: m_Name
       value: StoneCell
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948851223153751881, guid: c0d3c9d6f8525a643b683615b8aa77a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6009040798899883487, guid: c0d3c9d6f8525a643b683615b8aa77a7, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3679245
+      objectReference: {fileID: 0}
+    - target: {fileID: 6009040798899883487, guid: c0d3c9d6f8525a643b683615b8aa77a7, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3679245
+      objectReference: {fileID: 0}
+    - target: {fileID: 6009040798899883487, guid: c0d3c9d6f8525a643b683615b8aa77a7, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3679245
       objectReference: {fileID: 0}
     - target: {fileID: 6096990460425355152, guid: c0d3c9d6f8525a643b683615b8aa77a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -927,9 +947,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4588918766386237478, guid: 672e0d8cb59246b47996e474d881b595, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6293835451787482242, guid: 672e0d8cb59246b47996e474d881b595, type: 3}
       propertyPath: m_Name
       value: WaterCell
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293835451787482242, guid: 672e0d8cb59246b47996e474d881b595, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -988,6 +1016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VillagerCell
       objectReference: {fileID: 0}
+    - target: {fileID: 1659628044128796526, guid: 17fc42b9d04244440a11790712c2dc22, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1004,6 +1036,10 @@ PrefabInstance:
     - target: {fileID: 3451135804104340771, guid: 4402e20e338277348af6e6f9324ceea5, type: 3}
       propertyPath: m_Name
       value: SandCell
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451135804104340771, guid: 4402e20e338277348af6e6f9324ceea5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7630329598389728095, guid: 4402e20e338277348af6e6f9324ceea5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1045,10 +1081,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7964228840175825009, guid: 4402e20e338277348af6e6f9324ceea5, type: 3}
-      propertyPath: m_LayerOverridePriority
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1065,6 +1097,10 @@ PrefabInstance:
     - target: {fileID: 5213686587274020174, guid: d9a226f811131614bbe796db9a73f47b, type: 3}
       propertyPath: m_Name
       value: SeedCell
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213686587274020174, guid: d9a226f811131614bbe796db9a73f47b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7225193188487002490, guid: d9a226f811131614bbe796db9a73f47b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1122,6 +1158,10 @@ PrefabInstance:
     - target: {fileID: 1155208726920759744, guid: 8fed76abe52bc8245881395e2a6b2dcd, type: 3}
       propertyPath: m_Name
       value: EmptyCell
+      objectReference: {fileID: 0}
+    - target: {fileID: 1155208726920759744, guid: 8fed76abe52bc8245881395e2a6b2dcd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8061548359432826244, guid: 8fed76abe52bc8245881395e2a6b2dcd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1219,6 +1259,10 @@ PrefabInstance:
     - target: {fileID: 5934205589643487382, guid: f19bcc6439cdeaf45be9b590df25e7db, type: 3}
       propertyPath: m_Name
       value: BridgeCell
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934205589643487382, guid: f19bcc6439cdeaf45be9b590df25e7db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

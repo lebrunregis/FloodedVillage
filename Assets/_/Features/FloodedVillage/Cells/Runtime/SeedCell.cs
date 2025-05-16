@@ -10,7 +10,8 @@ public class SeedCell : Cell
         m_cellObject = EnumCellObject.Tree;
         m_cellType = EnumCellType.Dirt;
         m_waterState = EnumWaterState.Dry;
-        m_fgLayer.sprite = seeds;
+        m_fgRenderer.sprite = seeds;
+        m_waterRenderer.sprite = m_waterSprite;
     }
 
     public override bool LosingState()
@@ -26,7 +27,7 @@ public class SeedCell : Cell
     public override void OnFlooded()
     {
         m_waterState = EnumWaterState.Wet;
-        m_fgLayer.sprite = tree;
+        m_fgRenderer.sprite = tree;
     }
 
     public override bool WinningState()
