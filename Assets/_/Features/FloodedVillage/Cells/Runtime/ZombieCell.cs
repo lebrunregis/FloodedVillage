@@ -1,3 +1,4 @@
+using FloodedVillage.Cells.Runtime.CellEnums;
 using UnityEngine;
 
 public class ZombieCell : Cell
@@ -7,9 +8,9 @@ public class ZombieCell : Cell
 
     private void Awake()
     {
-        m_cellObject = EnumCellObject.Zombie;
-        m_cellType = EnumCellType.Empty;
-        m_waterState = EnumWaterState.Dry;
+        m_cellObject = CellObjectEnum.Zombie;
+        m_cellType = CellTypeEnum.Empty;
+        m_waterState = WaterStateEnum.Dry;
         m_bgRenderer.sprite = m_dirtSprite;
         m_fgRenderer.sprite = m_zombie;
         m_waterRenderer.sprite = m_waterSprite;
@@ -19,9 +20,9 @@ public class ZombieCell : Cell
     {
         switch (m_waterState)
         {
-            case EnumWaterState.Dry:
+            case WaterStateEnum.Dry:
                 return false;
-            case EnumWaterState.Wet:
+            case WaterStateEnum.Wet:
                 return true;
             default:
                 return false;
@@ -33,24 +34,29 @@ public class ZombieCell : Cell
 
     }
 
-    public override void OnFlooded()
-    {
-        m_waterState = EnumWaterState.Wet;
-        m_waterRenderer.enabled = true;
-        m_fgRenderer.sprite = m_drownedZombie;
-        Flood();
-    }
 
     public override bool WinningState()
     {
         switch (m_waterState)
         {
-            case EnumWaterState.Dry:
+            case WaterStateEnum.Dry:
                 return false;
-            case EnumWaterState.Wet:
+            case WaterStateEnum.Wet:
                 return true;
             default:
                 return false;
         }
+    }
+
+    public override void Flood(int remainingDepht)
+    {
+        base.BaseFlood(remainingDepht);
+    }
+
+    public override void OnFlooded(int remainingDepth)
+    {
+
+        m_fgRenderer.sprite = m_drownedZombie;
+        base.BaseOnFlooded(remainingDepth);
     }
 }

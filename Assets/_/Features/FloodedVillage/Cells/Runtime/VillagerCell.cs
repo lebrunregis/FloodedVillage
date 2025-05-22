@@ -1,3 +1,4 @@
+using FloodedVillage.Cells.Runtime.CellEnums;
 using UnityEngine;
 
 public class VillagerCell : Cell
@@ -7,9 +8,9 @@ public class VillagerCell : Cell
 
     private void Awake()
     {
-        m_cellObject = EnumCellObject.Villager;
-        m_cellType = EnumCellType.Empty;
-        m_waterState = EnumWaterState.Dry;
+        m_cellObject = CellObjectEnum.Villager;
+        m_cellType = CellTypeEnum.Empty;
+        m_waterState = WaterStateEnum.Dry;
         m_bgRenderer.sprite = m_dirtSprite;
         m_fgRenderer.sprite = m_villager;
         m_waterRenderer.sprite = m_waterSprite;
@@ -19,9 +20,9 @@ public class VillagerCell : Cell
     {
         switch (m_waterState)
         {
-            case EnumWaterState.Dry:
+            case WaterStateEnum.Dry:
                 return false;
-            case EnumWaterState.Wet:
+            case WaterStateEnum.Wet:
                 return true;
             default:
                 return false;
@@ -32,24 +33,29 @@ public class VillagerCell : Cell
     {
     }
 
-    public override void OnFlooded()
+    public override void OnFlooded(int remainingDepth)
     {
-        m_waterState = EnumWaterState.Wet;
-        m_waterRenderer.enabled = true;
+        Debug.Log("Villager died");
         m_fgRenderer.sprite = m_deadVillager;
-        Flood();
+        base.BaseOnFlooded(remainingDepth);
     }
 
     public override bool WinningState()
     {
         switch (m_waterState)
         {
-            case EnumWaterState.Dry:
+            case WaterStateEnum.Dry:
                 return true;
-            case EnumWaterState.Wet:
+            case WaterStateEnum.Wet:
                 return false;
             default:
                 return false;
         }
     }
+
+    public override void Flood(int remainingDepht)
+    {
+        base.BaseFlood(remainingDepht);
+    }
+
 }

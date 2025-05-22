@@ -1,3 +1,4 @@
+using FloodedVillage.Cells.Runtime.CellEnums;
 using UnityEngine;
 
 public class SandCell : Cell
@@ -6,9 +7,9 @@ public class SandCell : Cell
 
     public void Awake()
     {
-        m_cellObject = EnumCellObject.None;
-        m_cellType = EnumCellType.Sand;
-        m_waterState = EnumWaterState.Dry;
+        m_cellObject = CellObjectEnum.None;
+        m_cellType = CellTypeEnum.Sand;
+        m_waterState = WaterStateEnum.Dry;
         m_bgRenderer.sprite = m_dirtSprite;
         m_fgRenderer.sprite = m_sandSprite;
         m_waterRenderer.sprite = m_waterSprite;
@@ -20,7 +21,7 @@ public class SandCell : Cell
 
     public override void OnCellClicked()
     {
-        if (m_cellType == EnumCellType.Sand)
+        if (m_cellType == CellTypeEnum.Sand)
         {
             DestroySand();
             NearbyWaterCheck();
@@ -31,24 +32,12 @@ public class SandCell : Cell
     {
 
         m_fgRenderer.enabled = false;
-        m_cellType = EnumCellType.Empty;
+        m_cellType = CellTypeEnum.Empty;
     }
 
     public void OnMouseDown()
     {
         OnCellClicked();
-    }
-
-    public override void OnFlooded()
-    {
-        Debug.Log("OnFlooded");
-        if (m_waterState != EnumWaterState.Wet)
-        {
-            Debug.Log("Replacing sand by water");
-            m_waterState = EnumWaterState.Wet;
-            m_waterRenderer.enabled = true;
-            Flood();
-        }
     }
 
     public override bool WinningState()
@@ -60,16 +49,30 @@ public class SandCell : Cell
     {
         foreach (Cell cell in m_nearbyCells)
         {
-            switch (cell.WaterState)
+            switch (cell.m_waterState)
             {
-                case EnumWaterState.Wet:
+                case WaterStateEnum.Wet:
                     Debug.Log("Water detected");
-                    OnFlooded();
+                    OnFlooded(25);
                     break;
-                case EnumWaterState.Dry:
+                case WaterStateEnum.Dry:
                     break;
 
             }
+        }
+    }
+
+    public override void Flood(int remainingDepht)
+    {
+        base.BaseFlood(remainingDepht);
+    }
+
+    public override void OnFlooded(int remainingDepth)
+    {
+        Debug.Log("OnFlooded");
+        if (m_cellType == CellTypeEnum.Empty)
+        {
+            base.BaseOnFlooded(remainingDepth);
         }
     }
 }

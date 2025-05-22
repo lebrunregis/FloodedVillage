@@ -2,7 +2,8 @@
     "name": "FloodedVillage.Cells.Runtime",
     "rootNamespace": "FloodedVillage.Cells.Runtime",
     "references": [
-        "GUID:e539dba2f2442ac45872f12e12ad6676"
+        "GUID:e539dba2f2442ac45872f12e12ad6676",
+        "GUID:e15ef4db73cca19419ce191569f3a46a"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

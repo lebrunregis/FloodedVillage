@@ -1,3 +1,4 @@
+using FloodedVillage.Cells.Runtime.CellEnums;
 using UnityEngine;
 
 public class SeedCell : Cell
@@ -7,9 +8,9 @@ public class SeedCell : Cell
 
     private void Awake()
     {
-        m_cellObject = EnumCellObject.Tree;
-        m_cellType = EnumCellType.Dirt;
-        m_waterState = EnumWaterState.Dry;
+        m_cellObject = CellObjectEnum.Tree;
+        m_cellType = CellTypeEnum.Dirt;
+        m_waterState = WaterStateEnum.Dry;
         m_fgRenderer.sprite = seeds;
         m_waterRenderer.sprite = m_waterSprite;
     }
@@ -24,22 +25,31 @@ public class SeedCell : Cell
 
     }
 
-    public override void OnFlooded()
-    {
-        m_waterState = EnumWaterState.Wet;
-        m_fgRenderer.sprite = tree;
-    }
 
     public override bool WinningState()
     {
         switch (m_waterState)
         {
-            case EnumWaterState.Dry:
+            case WaterStateEnum.Dry:
                 return false;
-            case EnumWaterState.Wet:
+            case WaterStateEnum.Wet:
                 return true;
             default:
                 return false;
         }
+    }
+
+    public override void Flood(int remainingDepht)
+    {
+        base.BaseFlood(remainingDepht);
+    }
+
+    public override void OnFlooded(int remainingDepth)
+
+
+    {
+        m_waterState = WaterStateEnum.Wet;
+        m_fgRenderer.sprite = tree;
+        base.BaseOnFlooded(remainingDepth);
     }
 }

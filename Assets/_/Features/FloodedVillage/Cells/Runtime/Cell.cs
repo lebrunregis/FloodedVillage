@@ -1,21 +1,20 @@
 using System.Collections.Generic;
+using FloodedVillage.Cells.Runtime.CellEnums;
 using UnityEngine;
 
 public abstract class Cell : VerboseBehaviour
 {
-    public EnumCellObject m_cellObject = EnumCellObject.None;
-    public EnumCellType m_cellType = EnumCellType.Empty;
-    public EnumWaterState m_waterState = EnumWaterState.Dry;
+    public CellObjectEnum m_cellObject = CellObjectEnum.None;
+    public CellTypeEnum m_cellType = CellTypeEnum.Empty;
+    public WaterStateEnum m_waterState = WaterStateEnum.Dry;
 
-    public List<Cell> m_nearbyCells = new List<Cell>();
+    public List<Cell> m_nearbyCells = new();
     public Sprite m_waterSprite;
     public Sprite m_dirtSprite;
 
     public SpriteRenderer m_bgRenderer;
     public SpriteRenderer m_fgRenderer;
     public SpriteRenderer m_waterRenderer;
-
-    public EnumWaterState WaterState { get => m_waterState; }
 
     private void Awake()
     {
@@ -24,22 +23,45 @@ public abstract class Cell : VerboseBehaviour
         m_waterRenderer.enabled = false;
     }
 
-    protected void Flood()
+    public abstract void Flood(int remainingDepht);
+    protected void BaseFlood(int remainingDepht)
     {
-        if (m_waterState == EnumWaterState.Wet)
+        if (remainingDepht > 0)
         {
-            for (int i = 0; i <= m_nearbyCells.Count; i++)
+            if (m_waterState == WaterStateEnum.Wet)
             {
-                if (m_cellType == EnumCellType.Empty)
+                for (int i = 0; i < m_nearbyCells.Count; i++)
                 {
-                    m_nearbyCells[i].OnFlooded();
+                    if (m_cellType == CellTypeEnum.Empty)
+                    {
+                        m_nearbyCells[i].OnFlooded(remainingDepht);
+                    }
                 }
             }
         }
+        else
+        {
+            Debug.Log("Reached max depth, breaking out");
+        }
     }
-
     public abstract void OnCellClicked();
-    public abstract void OnFlooded();
+    public abstract void OnFlooded(int remainingDepth);
+    protected void BaseOnFlooded(int remainingDepth)
+    {
+        if (remainingDepth > 0)
+        {
+            if (m_cellType == CellTypeEnum.Empty && m_waterState != WaterStateEnum.Wet)
+            {
+                m_waterState = WaterStateEnum.Wet;
+                m_waterRenderer.enabled = true;
+                Flood(remainingDepth - 1);
+            }
+        }
+        else
+        {
+            Debug.Log("Reached max depth, breaking out");
+        }
+    }
     public abstract bool WinningState();
     public abstract bool LosingState();
 }

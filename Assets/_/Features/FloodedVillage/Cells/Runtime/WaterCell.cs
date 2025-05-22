@@ -1,14 +1,16 @@
+using FloodedVillage.Cells.Runtime.CellEnums;
+using UnityEngine;
+
 public class WaterCell : Cell
 {
-
+    public Sprite m_iceSprite;
     private void Awake()
     {
-        m_cellObject = EnumCellObject.None;
-        m_cellType = EnumCellType.Empty;
-        m_waterState = EnumWaterState.Wet;
+        m_cellObject = CellObjectEnum.None;
+        m_cellType = CellTypeEnum.Empty;
+        m_waterState = WaterStateEnum.Wet;
         m_bgRenderer.sprite = m_dirtSprite;
         m_waterRenderer.sprite = m_waterSprite;
-        m_waterState = EnumWaterState.Wet;
     }
 
     public override bool LosingState()
@@ -18,16 +20,22 @@ public class WaterCell : Cell
 
     public override void OnCellClicked()
     {
-
-    }
-
-    public override void OnFlooded()
-    {
-
+        m_waterState = WaterStateEnum.Ice;
+        m_waterRenderer.sprite = m_iceSprite;
     }
 
     public override bool WinningState()
     {
         return true;
+    }
+
+    public override void Flood(int remainingDepht)
+    {
+        base.BaseFlood(remainingDepht);
+    }
+
+    public override void OnFlooded(int remainingDepth)
+    {
+        base.BaseOnFlooded(remainingDepth);
     }
 }
